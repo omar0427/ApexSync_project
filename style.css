@@ -166,6 +166,8 @@ flex-grow: 0;
   padding: 0 20px;
 }
 
+
+/* section for the part of the grid giving you your stats */
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -174,16 +176,47 @@ flex-grow: 0;
 }
 
 .summary-card {
-  background: white;
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  color: white; /* Optional: makes text pop on colored backgrounds */
+}
+
+/* Card color variations */
+.card-teal { background: teal; }
+.card-blue { background: #3b82f6; }
+.card-orange { background: #ff7042; }
+.card-pink { background: #F45B85; }
+
+/* Header with icon space */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Space for SVG icon */
+.icon-placeholder {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .big-number {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .action-grid {
