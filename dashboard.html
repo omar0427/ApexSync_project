@@ -6,7 +6,12 @@
   <title>ApexSync Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="dashboard-page"> 
+  <div class="dashboard-video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="images/dashboard-bg.webm" type="video/mp4" />
+  </video>
+</div> 
 
   <header class="main-navbar">
     <div class="nav-logo">ApexSync</div>
@@ -17,6 +22,7 @@
       <a href="cafeteria.html">Cafeteria</a>
       <a href="courts.html">Courts</a>
       <a href="calendar.html">Calendar</a> 
+      <a href="community.html">Community</a>
     </nav>
   </header>
 
@@ -65,18 +71,38 @@
       </a>
     </section>
 
-    <section class="widget-grid">
-      <div class="widget-card">
-        <h2>Gym Activity</h2>
-        <div class="fake-chart">
-          <div class="bar" style="height: 40%;"></div>
-          <div class="bar" style="height: 65%;"></div>
-          <div class="bar" style="height: 55%;"></div>
-          <div class="bar" style="height: 80%;"></div>
-          <div class="bar" style="height: 60%;"></div>
-          <div class="bar" style="height: 45%;"></div>
-        </div>
-      </div>
+    <div class="widget-card live-chart-card">
+  <div class="live-chart-header">
+    <div>
+      <h2>Live Chart</h2>
+      <p class="live-chart-text">
+        There are approximately <strong>112 people</strong> at the gym right now.
+      </p>
+      <p class="live-chart-text">
+        Gym capacity is currently at <strong>72%</strong>.
+      </p>
+    </div>
+    <span class="live-badge">LIVE</span>
+  </div>
+
+  <div class="capacity-row">
+    <div class="capacity-bar">
+      <div class="capacity-fill" style="width: 72%;"></div>
+    </div>
+    <span class="capacity-percent">72%</span>
+  </div>
+
+  <div class="live-mini-chart">
+    <div class="mini-bar" style="height: 35%;"></div>
+    <div class="mini-bar" style="height: 48%;"></div>
+    <div class="mini-bar" style="height: 55%;"></div>
+    <div class="mini-bar" style="height: 62%;"></div>
+    <div class="mini-bar" style="height: 70%;"></div>
+    <div class="mini-bar" style="height: 72%;"></div>
+    <div class="mini-bar" style="height: 68%;"></div>
+    <div class="mini-bar" style="height: 66%;"></div>
+  </div>
+</div> 
 
       <div class="widget-card">
         <h2>My Activity</h2>
