@@ -70,18 +70,24 @@ nav a {
 
 .nav-container {
   display: flex;
+  flex-direction: column; 
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 5px;
   width: 100%;
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   flex-shrink: 0;
   background: white;
   border-radius: 14px;
+  padding: 8px 8px; 
+  width: fit-content;
+  margin-bottom: 5px;
 }
 .logo-image {
   width: 32px;
@@ -102,7 +108,7 @@ nav a {
 .tab-list {
   display: flex;
   gap: 4px;
-  flex: 1;
+  width: 100%;
   height: 36px;
   padding: 3px;
   background: #ececf0;
@@ -382,7 +388,7 @@ input {
 
 .cafeteria-subtitle {
   margin-bottom: 25px;
-  color: #555;
+  color: white;
 }
 
 .cafeteria-grid {
@@ -770,4 +776,12 @@ community-grid {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.06); opacity: 0.8; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+h2 {
+    background-color: white;
+    width: fit-content;
+    border-radius: 14px;
+    padding: 8px 8px;
+    
 }
