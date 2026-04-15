@@ -80,6 +80,8 @@ nav a {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+  background: white;
+  border-radius: 14px;
 }
 .logo-image {
   width: 32px;
