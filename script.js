@@ -3,18 +3,38 @@ const supabaseKey = "sb_publishable_71MdlF6qcg0pYovceeAxWA_5lOoaBVm";
 
 const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-// temporary hardcoded user for testing
 const currentUserId = 1;
+let selectedClassId = null;
+let selectedClassTitle = "";
 
-async function bookClass(classId, classDate, startTime, endTime) {
+function openBookingModal(classId, classTitle) {
+  selectedClassId = classId;
+  selectedClassTitle = classTitle;
+  document.getElementById("modalClassTitle").textContent = `Book ${classTitle}`;
+  document.getElementById("bookingModal").style.display = "flex";
+}
+
+function closeBookingModal() {
+  document.getElementById("bookingModal").style.display = "none";
+}
+
+async function confirmClassBooking() {
+  const bookingDate = document.getElementById("bookingDay").value;
+  const startTime = document.getElementById("bookingTime").value;
+
+  let endTime = "10:00";
+  if (startTime === "12:00") endTime = "13:00";
+  if (startTime === "16:00") endTime = "17:00";
+  if (startTime === "18:00") endTime = "19:00";
+
   const { error } = await supabaseClient
     .from("bookings")
     .insert([
       {
         user_id: currentUserId,
-        class_id: classId,
+        class_id: selectedClassId,
         court_id: null,
-        booking_date: classDate,
+        booking_date: bookingDate,
         start_time: startTime,
         end_time: endTime,
         status: "booked"
@@ -27,7 +47,8 @@ async function bookClass(classId, classDate, startTime, endTime) {
     return;
   }
 
-  alert("Class booked successfully!");
+  alert(`You successfully booked ${selectedClassTitle}.`);
+  closeBookingModal();
 }
 
 async function loadClasses() {
@@ -52,12 +73,10 @@ async function loadClasses() {
     <div class="class-card">
       <h3>${cls.title}</h3>
       <p>Coach: ${cls.coach_name || "TBA"}</p>
-      <p>Date: ${cls.class_date}</p>
-      <p>Time: ${cls.start_time} - ${cls.end_time}</p>
+      <p>Available Days: Tue, Thu, Fri</p>
+      <p>Available Times: 9:00 AM, 12:00 PM, 4:00 PM, 6:00 PM</p>
       <p>Capacity: ${cls.capacity}</p>
-      <button onclick="bookClass(${cls.id}, '${cls.class_date}', '${cls.start_time}', '${cls.end_time}')">
-        Book Class
-      </button>
+      <button onclick="openBookingModal(${cls.id}, '${cls.title}')">Book Class</button>
     </div>
   `).join("");
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-   
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,8 +14,8 @@
       <a href="index.html">Classes</a>
       <a href="bookings.html">My Bookings</a>
       <a href="cafeteria.html">Cafeteria</a>
-      <a href="courts.html">Courts</a> 
-      <a href="calendar.html">Calendar</a> 
+      <a href="courts.html">Courts</a>
+      <a href="calendar.html">Calendar</a>
       <a href="community.html">Community</a>
       <a href="messages.html">Messages</a>
     </nav>
@@ -26,6 +25,30 @@
     <h2>Available Classes</h2>
     <div id="class-list"></div>
   </main>
+
+  <div id="bookingModal" class="booking-modal">
+  <div class="booking-modal-content">
+    <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+    <h3 id="modalClassTitle">Book Class</h3>
+
+    <label for="bookingDay">Choose Day:</label>
+    <select id="bookingDay">
+      <option value="2026-03-25">Tuesday</option>
+      <option value="2026-03-27">Thursday</option>
+      <option value="2026-03-28">Friday</option>
+    </select>
+
+    <label for="bookingTime">Choose Time:</label>
+    <select id="bookingTime">
+      <option value="09:00">9:00 AM</option>
+      <option value="12:00">12:00 PM</option>
+      <option value="16:00">4:00 PM</option>
+      <option value="18:00">6:00 PM</option>
+    </select>
+
+    <button onclick="confirmClassBooking()">Confirm Booking</button>
+  </div>
+</div> 
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
