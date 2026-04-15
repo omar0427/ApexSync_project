@@ -1,5 +1,6 @@
 class NavigationBar extends HTMLElement {
   connectedCallback() {
+
     this.innerHTML = `
       <div class="nav-container">
 
@@ -29,8 +30,12 @@ class NavigationBar extends HTMLElement {
           <img src="icons/basketball icon.svg" alt="" class="tab-icon">
           <span class="tab-label">Courts</span>
         </a>
-        <a href="calendar.html" class="tab-button" data-tab="calendar">
+        <a href="community.html" class="tab-button" data-tab="Community">
           <img src="icons/classes icon.svg" alt="" class="tab-icon">
+          <span class="tab-label">Community</span>
+        </a>
+        <a href="calendar.html" class="tab-button" data-tab="calendar">
+          <img src="icons/class icon.svg" alt="" class="tab-icon">
           <span class="tab-label">Calendar</span>
         </a>
       </div>
@@ -43,5 +48,4 @@ class NavigationBar extends HTMLElement {
   }
 }
 
-//it used to highlight the active tab, not anymire
 customElements.define('navigation-bar', NavigationBar);
