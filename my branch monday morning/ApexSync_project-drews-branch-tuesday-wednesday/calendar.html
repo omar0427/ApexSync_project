@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar - ApexSync</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="navbar.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <navigation-bar></navigation-bar>
+  </header>
+
+  <main class="page-container">
+    <div class="calendar-header">
+      <button id="prevMonth">←</button>
+      <h2 id="monthYear">Month Year</h2>
+      <button id="nextMonth">→</button>
+    </div>
+
+    <div class="calendar-weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+
+    <div id="calendarGrid" class="calendar-grid"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="calendar.js"></script>
+</body>
+</html>
