@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages - ApexSync</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="app-page">
+
+  <header class="main-navbar">
+    <div class="nav-logo">ApexSync</div>
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html">Classes</a>
+      <a href="bookings.html">My Bookings</a>
+      <a href="cafeteria.html">Cafeteria</a>
+      <a href="courts.html">Courts</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="community.html">Community</a>
+      <a href="messages.html">Messages</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+  <h2>Messages</h2>
+
+  <section class="messages-top-cards">
+    <div class="messages-stat-card">
+      <h4>Active Chats</h4>
+      <p>6</p>
+    </div>
+    <div class="messages-stat-card">
+      <h4>Coaches Available</h4>
+      <p>2</p>
+    </div>
+    <div class="messages-stat-card">
+      <h4>New Connections</h4>
+      <p>3</p>
+    </div>
+  </section>
+
+  <div class="messages-layout">
+    <aside class="messages-sidebar">
+      <h3>Conversations</h3>
+      <div id="conversationList"></div>
+    </aside>
+
+    <section class="messages-chat">
+      <div id="chatHeader" class="chat-header">
+        Select a conversation
+      </div>
+
+      <div id="chatMeta" class="chat-meta"></div>
+
+      <div id="chatMessages" class="chat-messages">
+        <p class="empty-chat">No conversation selected yet.</p>
+      </div>
+
+      <div class="quick-replies">
+        <button onclick="useQuickReply('Let’s train tomorrow.')">Let’s train tomorrow</button>
+        <button onclick="useQuickReply('I’m joining that class too.')">I’m joining that class too</button>
+        <button onclick="useQuickReply('What time works best for you?')">What time works best for you?</button>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </section>
+  </div>
+</main> 
+<script src="messages.js"></script>
+</body>
+</html>

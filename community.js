@@ -132,7 +132,27 @@ function markGoing(eventName) {
 }
 
 function connectMember(memberName) {
-  alert(`Connection request sent to ${memberName}.`);
+  const conversationsKey = "apexsyncConversations";
+  const selectedConversationKey = "apexsyncSelectedConversation";
+
+  let conversations = JSON.parse(localStorage.getItem(conversationsKey)) || [];
+
+  const exists = conversations.find(c => c.name === memberName);
+
+  if (!exists) {
+    conversations.push({
+      name: memberName,
+      messages: [
+        { sender: memberName, text: "Hey! I’d be down to connect and train together." }
+      ]
+    });
+
+    localStorage.setItem(conversationsKey, JSON.stringify(conversations));
+  }
+
+  localStorage.setItem(selectedConversationKey, memberName);
+  alert(`Connection request sent to ${memberName}. Opening your chat now.`);
+  window.location.href = "messages.html";
 }
 
 function joinChallenge() {
